@@ -66,15 +66,13 @@ void GameManager::Run()
 			NOW = SDL_GetTicks();
 			Screen::Instance()->clearScreen();
 
-
 			Screen::Instance()->ThreeDScreen(100, 1920, 1080);
 			
 			_twodcam.Update();
 
 
-
-
 			_twodcam.Draw();
+			
 			
 
 			Screen::Instance()->SwapBuffer();
