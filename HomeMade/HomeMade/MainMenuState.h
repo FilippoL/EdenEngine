@@ -4,6 +4,7 @@
 #include "RunState.h"
 #include "FileManager.h"
 #include "TwoDCam.h"
+#include "ModelManager.h"
 
 
 class MainMenuState :

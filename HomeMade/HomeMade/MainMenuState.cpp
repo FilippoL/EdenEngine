@@ -9,6 +9,9 @@ MainMenuState::MainMenuState(GameStates* current) : GameStates(current)
 
 	_twodcam.Locate();
 
+	File::Instance()->SetSection("PORCODIO");
+	Model::Instance()->LoadAsset(File::Instance()->GetAlphabeticVariable("PATH"), File::Instance()->GetNumericVariable("FRAME"));
+
 
 }
 
@@ -20,14 +23,17 @@ MainMenuState::~MainMenuState()
 
 bool MainMenuState::update(double dt)
 {
+
+
 	Screen::Instance()->ThreeDScreen(100, 1920, 1080);
 
 	_twodcam.Update();
 
-	File::Instance()->SetSection("PORCODIO");
+	
 
-	std::cout << File::Instance()->GetAlphabeticVariable("PATH") << std::endl;
-	std::cout << File::Instance()->GetNumericVariable("FRAME") << std::endl;
+
+
+
 
 	//if ()
 	//{

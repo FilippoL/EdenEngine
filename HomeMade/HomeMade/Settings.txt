@@ -1,4 +1,4 @@
 #PORCODIO
-PATH = Assets//stadium.obj  ///comment
-FRAME = 100
+PATH = Assets//Camero_Model
+FRAME = 1
 #
