@@ -11,7 +11,7 @@ public:
 	void Initialise();
 
 	void Update(double dt, glm::vec3 rot);
-
+	
 	void SetTarget(glm::vec3 TargPos);
 
 	~ThirdPerson();
