@@ -132,7 +132,6 @@
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="FileManager.cpp" />
     <ClCompile Include="GameManager.cpp" />
-    <ClCompile Include="InputManager.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="ModelManager.cpp" />
     <ClCompile Include="ScreenManager.cpp" />
@@ -149,7 +148,6 @@
     <ClInclude Include="Camera.h" />
     <ClInclude Include="FileManager.h" />
     <ClInclude Include="GameManager.h" />
-    <ClInclude Include="InputManager.h" />
     <ClInclude Include="ModelManager.h" />
     <ClInclude Include="ScreenManager.h" />
     <ClInclude Include="ShaderManager.h" />
