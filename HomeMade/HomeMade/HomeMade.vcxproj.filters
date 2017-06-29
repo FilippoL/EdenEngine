@@ -37,6 +37,12 @@
     <Filter Include="Header Files\Components">
       <UniqueIdentifier>{ee0d3872-66fe-45b1-a9af-f8a6943c5adb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Game Objects">
+      <UniqueIdentifier>{55d5cca3-ecfb-4eac-9eae-e33ba76d8110}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Game Objects">
+      <UniqueIdentifier>{74a6f1e6-ff7a-4710-9a69-60f3cae95349}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="Main.frag">
@@ -107,6 +113,12 @@
     <ClCompile Include="AnimationComponent.cpp">
       <Filter>Source Files\Components</Filter>
     </ClCompile>
+    <ClCompile Include="GameObject.cpp">
+      <Filter>Source Files\Game Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Characters.cpp">
+      <Filter>Source Files\Game Objects</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ModelManager.h">
@@ -168,6 +180,12 @@
     </ClInclude>
     <ClInclude Include="AudioComponent.h">
       <Filter>Header Files\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject.h">
+      <Filter>Header Files\Game Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Characters.h">
+      <Filter>Header Files\Game Objects</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -11,8 +11,6 @@
 #include <math.h>
 #include <algorithm>
 
-
-
 GLuint TextureManager::GetID(std::string name)
 {
 	return m_TextureMap[name];
