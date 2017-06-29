@@ -4,7 +4,6 @@
 #include "ShaderManager.h"
 #include "AudioManager.h"
 #include "AudioComponent.h"
-#include "TwoDCam.h"
 #include "ModelManager.h"
 #include "InputManager.h"
 #include "GameStates.h"
@@ -46,7 +45,6 @@ private:
 
 	GameManager();
 	GameManager(const GameManager&);
-	TwoDCam _twodcam;
 
 	const Uint8* keys = nullptr;
 

@@ -8,21 +8,7 @@
 
 FileManager::FileManager()
 {
-	filename = "Settings.txt"; //by default the name of the setting file is Settings.txt
 
-	file.open(filename, std::ios::in);
-	if (!file)
-	{
-		file.open(filename, std::ios::out);
-		file.close();
-		file.open(filename, std::ios::in);
-		if (file.bad())
-		{
-			std::cout << "File opening FAILED";
-		}
-	}
-
-	file.close();
 }
 
 void FileManager::OpenNewFile(std::string filename_with_no_extension) //if a new setting file wants to be created

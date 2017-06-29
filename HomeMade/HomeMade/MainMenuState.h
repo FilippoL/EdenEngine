@@ -3,6 +3,7 @@
 #include "GameStates.h"
 #include "RunState.h"
 #include "FileManager.h"
+#include "TwoDCam.h"
 
 
 class MainMenuState :
@@ -12,12 +13,10 @@ public:
 	MainMenuState(GameStates *current); //CLASS CREATED
 	virtual ~MainMenuState();
 
-private:
-	
-	
 public:
 	virtual bool update(double dt) ;
-	virtual bool Draw() ;
+	virtual bool Draw();
+	TwoDCam _twodcam;
 
 };
 

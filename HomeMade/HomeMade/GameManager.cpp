@@ -11,6 +11,7 @@ bool GameManager::Initialise(std::string GameName, int Width, int Height)
 		return false;
 	}
 
+	File::Instance()->OpenNewFile("Settings");
 
 	Shade::Instance()->CreateProgram();
 	Shade::Instance()->CreateShaders();
@@ -35,9 +36,6 @@ bool GameManager::Initialise(std::string GameName, int Width, int Height)
 
 	Audio::Instance()->LoadMusic("soundtrack.mp3");
 
-
-	_twodcam.Locate();
-
 	//To add Object Manager and Texture Manager
 
 	Model::Instance()->LoadPlaceHolder("BOX", glm::vec3(10.0f,10.0f,10.0f));	//Texture::Instance()->LoadTexture("Filepath");
@@ -58,13 +56,19 @@ void GameManager::Run()
 		{
 
 			NOW = SDL_GetTicks();
+			
 			Screen::Instance()->clearScreen();
-
-			Screen::Instance()->ThreeDScreen(100, 1920, 1080);
 
 			Input::Instance()->Update();
 
 			keys = Input::Instance()->GetKeyStates();
+
+
+
+			_states.front()->update(DeltaTime);
+
+			_states.front()->Draw();
+
 
 
 
@@ -88,7 +92,7 @@ void GameManager::Run()
 				}
 			}
 
-			//draw screen by swapping SDL frame buffer
+			//draw screen by swapping frame buffer
 			Screen::Instance()->SwapBuffer();
 
 		}
@@ -137,8 +141,7 @@ void GameManager::DeleteState()
 }
 
 void GameManager::ShutDown()
-{
-	
+{	
 	Shade::Instance()->DetachDestroy();
 	Screen::Instance()->ShutDown();
 	Audio::Instance()->Unload();
