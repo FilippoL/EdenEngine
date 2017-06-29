@@ -1,5 +1,8 @@
 #include "GameManager.h"
 
+
+
+
 bool GameManager::Initialise(std::string GameName, int Width, int Height)
 {
 	if (!Screen::Instance()->Init(GameName, Width, Height, 3, 3, false, false)) //Create a gl context and window with assignable parameters
@@ -8,17 +11,18 @@ bool GameManager::Initialise(std::string GameName, int Width, int Height)
 		return false;
 	}
 
+
 	Shade::Instance()->CreateProgram();
 	Shade::Instance()->CreateShaders();
-	
+
 	Shade::Instance()->AttachShaders();
-	
+
 	if (!Shade::Instance()->CompileShaders("Main.vert"))
 	{
 		std::cout << "Shader not initialised" << std::endl;
 		return false;
 	}	
-	
+
 	if (!Shade::Instance()->CompileShaders("Main.frag")) 
 	{
 		std::cout << "Shader not initialised" << std::endl;
@@ -45,43 +49,77 @@ bool GameManager::Initialise(std::string GameName, int Width, int Height)
 	return true;
 
 }
- 
+
 void GameManager::Run()
 {
-		while (!endGame) //GAME LOOP
+	while (!endGame) //GAME LOOP
+	{
+		if (_states.front()->isAlive() && _states.front()->isActive())
 		{
-			if (_states.front()->isAlive() && _states.front()->isActive())
-			{
 
 			NOW = SDL_GetTicks();
 			Screen::Instance()->clearScreen();
 
 			Screen::Instance()->ThreeDScreen(100, 1920, 1080);
-			
+
 			Input::Instance()->Update();
-			
-			_twodcam.Update();
+
+			keys = Input::Instance()->GetKeyStates();
 
 
-			_twodcam.Draw();
-			
-			
 
-			
+			if (Input::Instance()->IsXClicked())
+			{	
+				for (size_t s = 0; s < _states.size(); s++)
+				{
 
-			
-			
-			(Input::Instance()->IsXClicked()) ? endGame = true : 0;
-			
+					_states[s]->isActive() = false;
+					_states[s]->isAlive() = false;
+				}
+			}
+
+			//if escape key is pressed flag game to end
+			if (keys[SDL_SCANCODE_ESCAPE])
+			{
+				for (size_t s = 0; s < _states.size(); s++)
+				{
+					_states[s]->isActive() = false;
+					_states[s]->isAlive() = false;
+				}
+			}
+
+			//draw screen by swapping SDL frame buffer
 			Screen::Instance()->SwapBuffer();
-			
-			LAST = SDL_GetTicks();
-			DeltaTime = (LAST - NOW) / 1000;
-
-			LAST = NOW = 0;
 
 		}
 
+		if (!_states.front()->isAlive())
+		{
+			DeleteState();
+		}
+
+
+		if (_states.empty()) //if everything is deleted exit
+		{
+			endGame = true;
+		}
+
+
+		std::cout << DeltaTime << std::endl;
+		system("cls");
+
+		LAST = SDL_GetTicks();
+		DeltaTime = (LAST - NOW) / 1000;
+
+		LAST = NOW = 0;
+	}
+
+}
+
+
+void GameManager::AddTempState(GameStates * my_state)
+{
+	_states.push_front(my_state);
 }
 
 void GameManager::ChangeState(GameStates * my_state)
@@ -97,7 +135,6 @@ void GameManager::DeleteState()
 	delete _states.front();
 	_states.pop_front();
 }
-
 
 void GameManager::ShutDown()
 {
