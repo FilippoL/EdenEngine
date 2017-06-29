@@ -1,5 +1,6 @@
 #include "GameManager.h"
 #include "ModelManager.h"
+#include "InputManager.h"
 #include <iostream>
 #include <SDL.h>
 #include <string>
@@ -68,6 +69,8 @@ void GameManager::Run()
 
 			Screen::Instance()->ThreeDScreen(100, 1920, 1080);
 			
+			Input::Instance()->Update();
+			
 			_twodcam.Update();
 
 
@@ -75,6 +78,12 @@ void GameManager::Run()
 			
 			
 
+			
+
+			
+			
+			(Input::Instance()->IsXClicked()) ? endGame = true : 0;
+			
 			Screen::Instance()->SwapBuffer();
 			
 			LAST = SDL_GetTicks();
