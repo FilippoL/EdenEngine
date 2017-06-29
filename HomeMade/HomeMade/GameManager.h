@@ -5,6 +5,10 @@
 #include "AudioManager.h"
 #include "AudioComponent.h"
 #include "TwoDCam.h"
+#include "ModelManager.h"
+#include "InputManager.h"
+#include "GameStates.h"
+#include "MainMenuState.h"
 
 
 #include <iostream>
@@ -15,6 +19,8 @@
 #include <fmod.hpp>
 #include <iostream>
 #include <deque>
+#include <SDL.h>
+
 
 
 class GameManager
@@ -26,9 +32,9 @@ public:
 
 	bool Initialise(std::string GameName, int Width, int Height);
 	void Run();
-	//void AddTempState(Gamestates * my_state);
-	//void ChangeState(Gamestates * my_state);
-	//void DeleteState();
+	void AddTempState(GameStates * my_state);
+	void ChangeState(GameStates * my_state);
+	void DeleteState();
 	void ShutDown() ;
 	
 	bool endGame = false;
@@ -41,6 +47,10 @@ private:
 	GameManager();
 	GameManager(const GameManager&);
 	TwoDCam _twodcam;
+
+	const Uint8* keys = nullptr;
+
+	std::deque <GameStates*> _states;
 
 	GameManager& operator=(const GameManager&);
 

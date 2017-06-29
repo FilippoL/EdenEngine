@@ -132,9 +132,13 @@
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="FileManager.cpp" />
     <ClCompile Include="GameManager.cpp" />
+    <ClCompile Include="GameStates.cpp" />
     <ClCompile Include="InputManager.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="MainMenuState.cpp" />
     <ClCompile Include="ModelManager.cpp" />
+    <ClCompile Include="PauseState.cpp" />
+    <ClCompile Include="RunState.cpp" />
     <ClCompile Include="ScreenManager.cpp" />
     <ClCompile Include="ShaderManager.cpp" />
     <ClCompile Include="TextureManager.cpp" />
@@ -149,8 +153,12 @@
     <ClInclude Include="Camera.h" />
     <ClInclude Include="FileManager.h" />
     <ClInclude Include="GameManager.h" />
+    <ClInclude Include="GameStates.h" />
     <ClInclude Include="InputManager.h" />
+    <ClInclude Include="MainMenuState.h" />
     <ClInclude Include="ModelManager.h" />
+    <ClInclude Include="PauseState.h" />
+    <ClInclude Include="RunState.h" />
     <ClInclude Include="ScreenManager.h" />
     <ClInclude Include="ShaderManager.h" />
     <ClInclude Include="Singleton.h" />
