@@ -130,6 +130,7 @@
     <ClCompile Include="AudioComponent.cpp" />
     <ClCompile Include="AudioManager.cpp" />
     <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="AnimationComponent.cpp" />
     <ClCompile Include="FileManager.cpp" />
     <ClCompile Include="GameManager.cpp" />
     <ClCompile Include="GameStates.cpp" />
@@ -151,6 +152,7 @@
     <ClInclude Include="AudioComponent.h" />
     <ClInclude Include="AudioManager.h" />
     <ClInclude Include="Camera.h" />
+    <ClInclude Include="AnimationComponent.h" />
     <ClInclude Include="FileManager.h" />
     <ClInclude Include="GameManager.h" />
     <ClInclude Include="GameStates.h" />

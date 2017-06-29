@@ -31,6 +31,12 @@
     <Filter Include="Header Files\GameStates">
       <UniqueIdentifier>{3cff5062-60ef-47b0-9106-e42867312388}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Components">
+      <UniqueIdentifier>{1fef9ba4-0b34-4f10-8644-12b731ded6c1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Components">
+      <UniqueIdentifier>{ee0d3872-66fe-45b1-a9af-f8a6943c5adb}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="Main.frag">
@@ -80,9 +86,6 @@
     <ClCompile Include="Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="AudioComponent.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="InputManager.cpp">
       <Filter>Source Files\Managers</Filter>
     </ClCompile>
@@ -97,6 +100,12 @@
     </ClCompile>
     <ClCompile Include="GameStates.cpp">
       <Filter>Source Files\GameStates</Filter>
+    </ClCompile>
+    <ClCompile Include="AudioComponent.cpp">
+      <Filter>Source Files\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="AnimationComponent.cpp">
+      <Filter>Source Files\Components</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -139,9 +148,6 @@
     <ClInclude Include="Singleton.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="AudioComponent.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="InputManager.h">
       <Filter>Header Files\Managers</Filter>
     </ClInclude>
@@ -156,6 +162,12 @@
     </ClInclude>
     <ClInclude Include="GameStates.h">
       <Filter>Header Files\GameStates</Filter>
+    </ClInclude>
+    <ClInclude Include="AnimationComponent.h">
+      <Filter>Header Files\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="AudioComponent.h">
+      <Filter>Header Files\Components</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
