@@ -18,13 +18,13 @@ GLuint TextureManager::GetID(std::string name)
 	return m_TextureMap[name];
 }
 
-bool TextureManager::LoadFile(std::string filename, std::string name, bool repeated)
+bool TextureManager::LoadFile(std::string name, bool repeated)
 {
 	GLuint textureID;
 	glGenTextures(1, &textureID);
 
 	SDL_Surface* textureData = 0;
-	textureData = IMG_Load(filename.c_str());
+	textureData = IMG_Load(name.c_str());
 
 	if (!textureData)
 	{

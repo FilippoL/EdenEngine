@@ -17,7 +17,7 @@ public:
 
 public:
 
-	bool LoadFile(std::string filename, std::string name, bool repeated = false);
+	bool LoadFile(std::string name, bool repeated = false);
 	void AddTexture(std::string, GLuint);
 	void UnloadSingleFile(std::string ID);
 	void UnloadFile();

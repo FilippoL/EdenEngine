@@ -7,9 +7,6 @@
 #include <glew.h>
 #include <glm.hpp>
 
-
-
-
 bool GameManager::Initialise(std::string GameName, int Width, int Height)
 {
 	if (!Screen::Instance()->Init(GameName, Width, Height, 3, 3, false, false)) //Create a gl context and window with assignable parameters
@@ -17,7 +14,6 @@ bool GameManager::Initialise(std::string GameName, int Width, int Height)
 		std::cout << "Screen not initialised" << std::endl;
 		return false;
 	}
-
 
 	Shade::Instance()->CreateProgram();
 	Shade::Instance()->CreateShaders();
@@ -64,27 +60,19 @@ void GameManager::Run()
 		{
 
 			NOW = SDL_GetTicks();
-			Screen::Instance()->clearScreen();
-
 
 			Screen::Instance()->ThreeDScreen(100, 1920, 1080);
-			
+			Screen::Instance()->clearScreen();
+
 			_twodcam.Update();
-
-
-
-
 			_twodcam.Draw();
 			
-
 			Screen::Instance()->SwapBuffer();
 			
 			LAST = SDL_GetTicks();
 			DeltaTime = (LAST - NOW) / 1000;
 			LAST = NOW = 0;
-
 		}
-
 }
 
 //

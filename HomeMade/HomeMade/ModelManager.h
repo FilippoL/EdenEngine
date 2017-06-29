@@ -4,6 +4,7 @@
 #include <postprocess.h>
 #include <cimport.h>
 #include <scene.h>
+#include <iostream>
 #include <glm.hpp>
 #include <glew.h>
 #include <vector>
@@ -11,6 +12,7 @@
 
 typedef std::map<std::string, std::map<GLint, std::vector<GLfloat>>> MapStringIntVGLfloat;
 typedef std::map<std::string, std::map<GLint, std::vector<GLuint>>> MapStringIntVGLuint;
+typedef std::map<std::string, std::map<GLint, GLint>> MapStringIntGLint;
 
 class ModelManager
 {
@@ -33,7 +35,7 @@ public:
 	std::vector<GLfloat>& GetTangent(	std::string Object, int frame) { return Tangent[Object][frame]; };
 	std::vector<GLfloat>& GetBiTangent(	std::string Object, int frame) { return BiTangent[Object][frame]; };
 	std::vector<GLuint>&  GetIndices(	std::string Object, int frame) { return Indices[Object][frame]; };
-	GLint& GetTotalVerts(std::string Object) { return TotalVerts[Object]; }
+	GLint& GetTotalVerts(				std::string Object, int frame) { return TotalVerts[Object][frame]; }
 
 private:
 	ModelManager();
@@ -50,7 +52,7 @@ private:
 	MapStringIntVGLfloat Tangent;
 	MapStringIntVGLfloat BiTangent;
 	MapStringIntVGLuint Indices;
-	std::map<std::string, GLint> TotalVerts;
+	MapStringIntGLint TotalVerts;
 };
 
 typedef Singleton<ModelManager> Model;
