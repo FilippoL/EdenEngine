@@ -10,6 +10,7 @@ MainMenuState::MainMenuState(GameStates* current) : GameStates(current)
 	_twodcam.Locate();
 
 	_p->SetAttributes();
+	_p->SetColors(glm::vec3(1), glm::vec3(1), glm::vec3(1));
 	_p->FillBuffers();
 	_p->InitShininess(1);
 	_p->InitPosition(glm::vec3(0));

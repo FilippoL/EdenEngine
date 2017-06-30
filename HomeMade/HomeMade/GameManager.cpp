@@ -11,6 +11,7 @@ bool GameManager::Initialise(std::string GameName, int Width, int Height)
 		return false;
 	}
 
+
 	File::Instance()->OpenNewFile("Settings");
 
 	Shade::Instance()->CreateProgram();

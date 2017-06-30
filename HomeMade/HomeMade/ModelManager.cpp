@@ -106,6 +106,7 @@ void ModelManager::LoadPlaceHolder(std::string Identity, glm::vec3 Sizes)
 
 	TotalVerts[Identity][0] = 36;
 
+
 	//mesh vertices
 	Vertices[Identity][0].push_back(-Sizes.x / 2);Vertices[Identity][0].push_back(-Sizes.y / 2);Vertices[Identity][0].push_back(+Sizes.z / 2); //Front
 	Vertices[Identity][0].push_back(-Sizes.x / 2);Vertices[Identity][0].push_back(+Sizes.y / 2);Vertices[Identity][0].push_back(+Sizes.z / 2);

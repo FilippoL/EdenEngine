@@ -92,6 +92,7 @@ void Characters::Render(bool Textured, bool Mapped, bool Lit)
 
 	glDrawElements(GL_TRIANGLES, Model::Instance()->GetTotalVerts(ObjectTag,0), GL_UNSIGNED_INT, 0);
 
+
 	glBindVertexArray(0);
 }
 
@@ -113,7 +114,8 @@ void Characters::FillBuffers()
 {
 	//bind all VBOs and shader attributes together with VAO 
 	glBindVertexArray(VAO);
-	std::cout << Model::Instance()->GetVertices(ObjectTag, 0).size() << std::endl;
+
+	
 	//fill and link vertex VBO     
 	glBindBuffer(GL_ARRAY_BUFFER, VertexVBO);
 	glBufferData(GL_ARRAY_BUFFER, sizeof(GLfloat)*Model::Instance()->GetVertices(ObjectTag,0).size(), &Model::Instance()->GetVertices(ObjectTag,0)[0], GL_DYNAMIC_DRAW);
@@ -153,6 +155,7 @@ void Characters::FillBuffers()
 	//fill EBO with indices      
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
 	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(GLuint)*Model::Instance()->GetIndices(ObjectTag,0).size(), &Model::Instance()->GetIndices(ObjectTag,0)[0], GL_DYNAMIC_DRAW);
+
 
 	//end the VAO binding
 	glBindVertexArray(0);
