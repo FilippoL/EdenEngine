@@ -1,10 +1,15 @@
 #include "ModelManager.h"
 
-bool ModelManager::LoadAsset(std::string Identity, int totframes)
+bool ModelManager::LoadAsset(std::string Identity)
 {
-	for (int Frame = 0; Frame < totframes;Frame++)
+	File::Instance()->SetSection(Identity);
+	
+	int temp_totFrame;
+	temp_totFrame = int(File::Instance()->GetNumericVariable("total_frames"));
+
+	for (int Frame = 0; Frame < temp_totFrame;Frame++)
 	{
-		std::string filepath = Identity + std::to_string(Frame) + ".obj";
+		std::string filepath = File::Instance()->GetAlphabeticVariable("path_to_obj") + std::to_string(Frame) + ".obj";
 
 		//load model into assimp as a scene (nodes/meshes/faces/vertices/uvs/normals/indices)
 		const aiScene* Scene = aiImportFile(filepath.c_str(), aiProcess_Triangulate |
@@ -245,6 +250,7 @@ void ModelManager::LoadPlaceHolder(std::string Identity, glm::vec3 Sizes)
 		Indices[Identity][0].push_back(2 + (Face * 4));
 		Indices[Identity][0].push_back(3 + (Face * 4));
 	}
+
 }
 
 void ModelManager::Unload()

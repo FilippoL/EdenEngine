@@ -37,6 +37,8 @@ bool GameManager::Initialise(std::string GameName, int Width, int Height)
 	Audio::Instance()->LoadMusic("soundtrack.mp3");
 
 	//To add Object Manager and Texture Manager
+	/*Model::Instance()->LoadAsset("Cubo");
+	Texture::Instance()->LoadFile("Cubo");*/
 
 	Model::Instance()->LoadPlaceHolder("BOX", glm::vec3(10.0f,10.0f,10.0f));	//Texture::Instance()->LoadTexture("Filepath");
 

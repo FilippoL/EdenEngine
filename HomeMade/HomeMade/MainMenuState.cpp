@@ -9,9 +9,12 @@ MainMenuState::MainMenuState(GameStates* current) : GameStates(current)
 
 	_twodcam.Locate();
 
-	File::Instance()->SetSection("PORCODIO");
-	Model::Instance()->LoadAsset(File::Instance()->GetAlphabeticVariable("PATH"), File::Instance()->GetNumericVariable("FRAME"));
-
+	_p->SetAttributes();
+	_p->FillBuffers();
+	_p->InitShininess(1);
+	_p->InitPosition(glm::vec3(0));
+	_p->InitScale(glm::vec3(1));
+	_p->InitRotation(glm::vec3(0));
 
 }
 
@@ -31,7 +34,7 @@ bool MainMenuState::update(double dt)
 
 	
 
-
+	_p->UpdateInputs();
 
 
 
@@ -65,7 +68,7 @@ bool MainMenuState::update(double dt)
 bool MainMenuState::Draw()
 {
 	_twodcam.Draw();
-
+	_p->Render(true, true, false);
 	return false;
 }
 

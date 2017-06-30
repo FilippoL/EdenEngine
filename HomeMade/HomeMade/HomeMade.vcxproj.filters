@@ -9,10 +9,6 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
     </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
     <Filter Include="Header Files\Managers">
       <UniqueIdentifier>{50f078e4-952c-4a7a-a0d0-6b330ba4ef74}</UniqueIdentifier>
     </Filter>
@@ -43,13 +39,17 @@
     <Filter Include="Source Files\Game Objects">
       <UniqueIdentifier>{74a6f1e6-ff7a-4710-9a69-60f3cae95349}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Game Objects\Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="Main.frag">
-      <Filter>Resource Files</Filter>
+      <Filter>Source Files\Game Objects\Resource Files</Filter>
     </None>
     <None Include="Main.vert">
-      <Filter>Resource Files</Filter>
+      <Filter>Source Files\Game Objects\Resource Files</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>

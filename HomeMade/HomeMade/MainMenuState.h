@@ -5,6 +5,8 @@
 #include "FileManager.h"
 #include "TwoDCam.h"
 #include "ModelManager.h"
+#include "Characters.h"
+
 
 
 class MainMenuState :
@@ -18,6 +20,6 @@ public:
 	virtual bool update(double dt) ;
 	virtual bool Draw();
 	TwoDCam _twodcam;
-
+	Characters * _p = new Characters;
 };
 

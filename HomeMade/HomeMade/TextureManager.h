@@ -1,10 +1,20 @@
 #pragma once
 #include <string>
 #include "Singleton.h"
-#include <glm.hpp>
-//#include <glext.h>
-#include <glew.h>
+#include "FileManager.h"
+
+
 #include <map>
+#include <iostream>
+#include <SDL_image.h>
+#include <string>
+#include <vector>
+#include <glew.h>
+#include <windows.h>
+#include <glm.hpp>
+#include <glext.h>
+#include <math.h>
+#include <algorithm>
 
 class TextureManager
 {
@@ -12,10 +22,12 @@ public:
 	friend class Singleton<TextureManager>;
 
 public:
-	GLuint GetID(std::string);
 
+	GLuint GetDiffID(std::string name);
 
-public:
+	GLuint GetSpecID(std::string name);
+
+	GLuint GetNormID(std::string name);
 
 	bool LoadFile(std::string name, bool repeated = false);
 	void AddTexture(std::string, GLuint);

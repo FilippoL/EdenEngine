@@ -2,6 +2,8 @@
 #include "Characters.h"
 #include "GameObject.h"
 #include <deque>
+#include <SDL_image.h>
+
 
 class Characters : public GameObject
 {
@@ -18,11 +20,11 @@ public:
 	void Render(bool Textured, bool Mapped, bool Lit);
 	//--------------------------------------------------- Object Update
 	virtual void UpdateInputs();
+	//--------------------------------------------------- Fill Buffers (Child)
+	void FillBuffers();
 
 protected:
 
-	//--------------------------------------------------- Fill Buffers (Child)
-	void FillBuffers();
 	//--------------------------------------------------- Vertex Buffers
 	GLuint VertexVBO;
 	GLuint ColorVBO;

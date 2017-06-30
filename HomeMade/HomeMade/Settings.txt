@@ -1,4 +1,8 @@
-#PORCODIO
-PATH = Assets//Camero_Model
-FRAME = 1
+#Cubo
+path_to_obj = Assets//Camero_Model
+total_frames = 1
+diff = Assets//balls1.png
+spec = Assets//balls2.png
+norm = Assets//balls3.png
 #
+

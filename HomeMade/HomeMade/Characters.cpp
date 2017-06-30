@@ -1,5 +1,4 @@
 #include "Characters.h"
-#include <SDL_image.h>
 
 Characters::Characters()
 {
@@ -15,10 +14,9 @@ Characters::Characters()
 	glGenBuffers(1, &BiTangentVBO);
 	glGenBuffers(1, &EBO);
 
-	ObjectTag = "PORCODIO";
-
-	FillBuffers();
+	ObjectTag = "BOX";
 }
+
 
 Characters::~Characters()
 {
@@ -79,15 +77,15 @@ void Characters::Render(bool Textured, bool Mapped, bool Lit)
 
 	//bind Diffuse Map
 	glActiveTexture(GL_TEXTURE0);
-	glBindTexture(GL_TEXTURE_2D, Texture::Instance()->GetID(ObjectTag));
+	glBindTexture(GL_TEXTURE_2D, Texture::Instance()->GetDiffID(ObjectTag));
 
 	//bind Specular Map	
 	glActiveTexture(GL_TEXTURE1);
-	glBindTexture(GL_TEXTURE_2D, Texture::Instance()->GetID(ObjectTag));
+	glBindTexture(GL_TEXTURE_2D, Texture::Instance()->GetSpecID(ObjectTag));
 	
 	//bind Normal Map	
 	glActiveTexture(GL_TEXTURE2);
-	glBindTexture(GL_TEXTURE_2D, Texture::Instance()->GetID(ObjectTag));
+	glBindTexture(GL_TEXTURE_2D, Texture::Instance()->GetNormID(ObjectTag));
 	
 	//bind VAO and render 
 	glBindVertexArray(VAO);
@@ -115,7 +113,7 @@ void Characters::FillBuffers()
 {
 	//bind all VBOs and shader attributes together with VAO 
 	glBindVertexArray(VAO);
-
+	std::cout << Model::Instance()->GetVertices(ObjectTag, 0).size() << std::endl;
 	//fill and link vertex VBO     
 	glBindBuffer(GL_ARRAY_BUFFER, VertexVBO);
 	glBufferData(GL_ARRAY_BUFFER, sizeof(GLfloat)*Model::Instance()->GetVertices(ObjectTag,0).size(), &Model::Instance()->GetVertices(ObjectTag,0)[0], GL_DYNAMIC_DRAW);

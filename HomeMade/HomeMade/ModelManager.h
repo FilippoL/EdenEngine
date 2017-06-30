@@ -1,6 +1,7 @@
 #pragma once
-#include <string>
 #include "Singleton.h"
+#include "FileManager.h"
+#include <string>
 #include <postprocess.h>
 #include <cimport.h>
 #include <scene.h>
@@ -21,7 +22,7 @@ public:
 
 public:
 
-	bool LoadAsset(std::string Identity, int totframes);
+	bool LoadAsset(std::string Identity);
 	void LoadPlaceHolder(std::string Identity, glm::vec3 Sizes);
 
 	void Unload();
@@ -35,7 +36,7 @@ public:
 	std::vector<GLfloat>& GetTangent(	std::string Object, int frame) { return Tangent[Object][frame]; };
 	std::vector<GLfloat>& GetBiTangent(	std::string Object, int frame) { return BiTangent[Object][frame]; };
 	std::vector<GLuint>&  GetIndices(	std::string Object, int frame) { return Indices[Object][frame]; };
-	GLint& GetTotalVerts(				std::string Object, int frame) { return TotalVerts[Object][frame]; }
+	GLint& GetTotalVerts(std::string Object, int frame) { return TotalVerts[Object][frame]; };
 
 private:
 	ModelManager();
